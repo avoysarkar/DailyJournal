@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p><%= StrtContent %></p>
+
+<% objectBody.forEach(function(objects){  %>
+    <h1><%= objects.title %></h1>
+    <p><%= objects.postBody.substring(0,100) + " ... "%>
+       <a href="/posts/<%= objects.title %>">Read More</a>
+    </p>
+<% })%>
+
+<%- include("partials/footer"); -%>
