@@ -4,10 +4,13 @@
 <p><%= StrtContent %></p>
 
 <% objectBody.forEach(function(objects){  %>
-    <h1><%= objects.title %></h1>
+    <h1><%= objects.postTitle %></h1>
+    <% if(objects.postBody.length>100){%>
     <p><%= objects.postBody.substring(0,100) + " ... "%>
-       <a href="/posts/<%= objects.title %>">Read More</a>
+       <a href="/posts/<%= objects._id %>">Read More</a>
     </p>
-<% })%>
+<% }else{ %>
+    <p><%= objects.postBody %></p>
+<% }}) %>
 
 <%- include("partials/footer"); -%>
